@@ -8,6 +8,6 @@ This is a Book Record Managment API Backend Application
 
 
 ### /users
-POST: Craete a new user "\n"
+POST: Craete a new user  
 GET: All the list of users
 
