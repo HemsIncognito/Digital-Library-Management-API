@@ -10,7 +10,6 @@
   "name": "project_4",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JackHarperIMF/FSWD_Project-4.git"

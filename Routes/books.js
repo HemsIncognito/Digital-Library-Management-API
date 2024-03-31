@@ -64,7 +64,7 @@ router.get("/issued/free", (req,res) => {
 
         issuedBooks.push(book);
     })
-    
+
     if(issuedBooks.length === 0){
         return res.status(404).json({
             message: "No Books isssued yet"
@@ -89,6 +89,7 @@ router.post("/", (req,res) => {
             message: "Invalid Data! Please provide proper data"
         })
     }
+
     const book = books.find((each) => each.id === data.id);
     if(book){
         return res.status(404).json({
@@ -100,6 +101,39 @@ router.post("/", (req,res) => {
     return res.status(201).json({
         message: "The Book was added to the Library",
         books
+    })
+})
+
+/*
+Route: /books/id
+Method: PUT
+Update a book
+Parameters: id
+*/ 
+router.put("/:id", (req,res) => {
+    const {id} = req.params;
+    const {data} = req.body;
+
+    if(id === "") return res.status(400).json({
+        message: "Enter a valid ID"
+    })
+
+    const book = users.find((each) => each.id === id);
+
+    if(!book){
+        return res.status(404).json({
+            message: "Book with given id doesn't exist :-("
+        })
+    }
+    const updatedBook = users.map((each)=>{
+        if(each.id === id){
+            return {...each, ...data}
+        }
+        return each;
+    })
+    return res.status(200).json({
+        message: "Changes updated",
+        updatedList: updatedBook
     })
 })
 

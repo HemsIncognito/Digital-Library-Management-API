@@ -14,6 +14,7 @@ app.get("/", (req,res) => {
     })
 })
 
+//This how we call a router 
 app.use("/users", userRoute);
 app.use("/books", bookRoute);
 
