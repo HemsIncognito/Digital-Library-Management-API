@@ -1,10 +1,14 @@
 const express = require('express');
-
+const dbConnection = require('./DbConnection')
 const userRoute = require("./Routes/users");
 const bookRoute = require("./Routes/books");
+const env = require('dotenv');
 
 const app = express();
+env.config();
+dbConnection();
 app.use(express.json()); //parse the json 
+
 
 const PORT = 8081;
 
