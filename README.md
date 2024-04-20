@@ -37,6 +37,6 @@ The structure is well-defined, separating user and book management routes. No ch
 - **Integration with MongoDB**: Integration with MongoDB for data storage and retrieval.
 - **Schema Development**: Utilizing Mongoose schemas for robust data modeling.
 - **Usage of DTO's**: 
-   >> Reduced duplication: Reduces code duplication by providing a centralized location to define data structures used across different parts of the application.
-   >> Improved Data Readabilty: Makes data structures more explicit and easier to understand by separating data used for specific purposes.
-   >> Enhanced Data Validation: Implements data validation logic at the object level ensuring integrity.
+    - Reduced duplication: Reduces code duplication by providing a centralized location to define data structures used across different parts of the application.
+    - Improved Data Readabilty: Makes data structures more explicit and easier to understand by separating data used for specific purposes.
+    - Enhanced Data Validation: Implements data validation logic at the object level ensuring integrity.
