@@ -1,17 +1,21 @@
-# Book Record Managment API | FSWD-4.1 (*Upgraded*)
-This is a Book Record Managment API Backend Application, a Node.js backend application, leveraging the Express.js framework, manages books, users, and subscriptions - enabling efficient book management.
+# Book Record Managment API | FSWD-4.2 (*Upgraded*)
+### Technology Stack:
+Node.js: Efficient server-side execution.
+Express.js: Structured API development.
+MongoDB: Scalable NoSQL database for data storage.
+Mongoose: Simplifies interaction with MongoDB.
+Data Transfer Objects (DTOs): Improves data handling and reduces redundancy.
 
-## Functionalities:
-- **CRUD Operations**: Supports Create, Read, Update, and Delete operations on users, books, and subscriptions.
-- **User Management**: Handles user creation, data retrieval, subscription management, and fine tracking.
-- **Book Management**: Enables adding new books with details, tracking issued books, managing returns, and identifying books with outstanding fines.
-- **Subscription Plans**: Offers configurable subscription plans with varying durations and privileges. (Future enhancement) Integration for calculating fines based on overdue days and subscription type.
-- **Routing**: The API utilizes a well-defined routing structure using Express.js routes to handle various requests for book management tasks.
+### Reference to FSWD-4.1:
+https://github.com/JackHarperIMF/FSWD-4.1
+
+## Added Functionalities:
+- **Routing**: The API utilizes a well-defined Routing structure using Express.js routes which holds apis whihc calls 'controllers' to handle various requests for book management tasks.
 - **Schema-based Models**: Leverages a dedicated models for books and users defining robust data structures using Mongoose schemas, ensuring data integrity and consistency.
-- **Integrated with MongoDB**
-
+- **DTOs and MongoDB**
+  
 ## Routes and Endpoints:
-The structure is well-defined, separating user and book management routes.
+The structure is well-defined, separating user and book management routes. No changes to API's with respect to previous version.
 
 ### User Endpoints:
 - Create  (POST /users): Allows creating new users.  
@@ -29,9 +33,8 @@ The structure is well-defined, separating user and book management routes.
 - Issued Books (GET /books/issued): Lists all currently issued books.
 
 ## Skills Highlighted
-- **Backend Development**: The project demonstrates proficiency in building backend applications using Node.js and Express.js.
-- **API Design**: It showcases the ability to design and implement well-structured and RESTful APIs for data interaction.
-- **Integration with MongoDB**: Seamless integration with MongoDB for data storage and retrieval.
+- **Backend Development**: Growing closer to building MERN Stack Projects.
+- **Integration with MongoDB**: Integration with MongoDB for data storage and retrieval.
 - **Schema Development**: Utilizing Mongoose schemas for robust data modeling.
 - **Usage of DTO's**: 
  * Reduced duplication: Reduces code duplication by providing a centralized location to define data structures used across different parts of the application.
