@@ -60,7 +60,7 @@ router.get("/subscription-details/:id", (req,res) => {
         })
     }
 
-    //Subscription Expiration Logic
+    //Subscription Expiration Logic---------------
 
     //Prerequisites
     const dateInDays = (data = "") => {
@@ -74,34 +74,36 @@ router.get("/subscription-details/:id", (req,res) => {
 
         return Math.floor(date / 1000*60*60*24); //day = 1/ms*sec*min*hours of date
     }
+
     const subscriptionType = (date) => {
         if(user.subscriptionType === "Basic"){
-            date += 90;
+            return date += 90;
         }
         else if(user.subscriptionType === "Standard"){
-            date += 180;
+            return date += 180;
         }
         else if(user.subscriptionType === "Premium"){
-            date += 365;
+            return date += 365;
         }
         return date;
     }
 
     //The LOGIC
-    let returnDate = dateInDays(user.returnDate);
-    let currentDate = dateInDays();
-    let subscriptionDate = dateInDays(user.subscriptionDate);
-    let subscriptionExpiryDate = subscriptionType(subscriptionDate);
+    let ReturnDate = dateInDays(user.returnDate);
+    let CurrentDate = dateInDays();
+    let SubscriptionDate = dateInDays(user.subscriptionDate);
+    let SubscriptionExpiryDate = subscriptionType(subscriptionDate);
 
     const data = { ...user, 
-        subscriptionExpired: subscriptionExpiryDate < currentDate,
-        subscriptionDaysLeft: (subscriptionExpiryDate <= currentDate) ? 0 : subscriptionExpiryDate-currentDate,
-        fine: returnDate < currentDate ? subscriptionExpiryDate <= currentDate ? 200 : 100 : 0
+        subscriptionExpired: SubscriptionExpiryDate < CurrentDate,
+        subscriptionDaysLeft: (SubscriptionExpiryDate <= CurrentDate) ? 0 : SubscriptionExpiryDate-CurrentDate,
+        fine: ReturnDate < CurrentDate ? (SubscriptionExpiryDate <= CurrentDate ? 200 : 100) : 0
 
-    }
+    };
+
     return res.status(200).json({
         data
-    })
+    });
     
 })
 
