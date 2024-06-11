@@ -1,4 +1,4 @@
-# Book Record Managment API | FSWD-4.2 (*Upgraded*)
+# Digital Library Managment API | FSWD-4.2 (*Upgraded*)
 ### Technology Stack:
 Node.js: Efficient server-side execution.
 Express.js: Structured API development.
