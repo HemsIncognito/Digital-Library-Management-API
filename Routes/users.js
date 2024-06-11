@@ -72,7 +72,7 @@ router.get("/subscription-details/:id", (req,res) => {
             date = new Date();
         }
 
-        return Math.floor(date / 1000*60*60*24); //day = 1/ms*sec*min*hours of date
+        return Math.floor(date/(1000*60*60*24)); //day = 1/ms*sec*min*hours of date
     }
 
     const subscriptionType = (date) => {
