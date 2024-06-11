@@ -6,8 +6,12 @@ MongoDB: Scalable NoSQL database for data storage.
 Mongoose: Simplifies interaction with MongoDB.
 Data Transfer Objects (DTOs): Improves data handling and reduces redundancy.
 
-### Reference to FSWD-4.1:
-https://github.com/JackHarperIMF/FSWD-4.1
+## Functionalities:
+- CRUD Operations: Supports Create, Read, Update, and Delete operations on users, books, and subscriptions.
+- User Management: Handles user creation, data retrieval, subscription management, and fine tracking.
+- Book Management: Enables adding new books with details, tracking issued books, managing returns, and identifying books with outstanding fines.
+- Subscription Plans: Offers configurable subscription plans with varying durations and calculates fines based on overdue days and subscription type.
+- Routing: The API utilizes a well-defined routing structure using Express.js routes to handle various requests for book management tasks.
 
 ## Added Functionalities:
 - **Routing**: The API utilizes a well-defined Routing structure using Express.js routes which holds apis whihc calls 'controllers' to handle various requests for book management tasks.
